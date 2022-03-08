@@ -27,8 +27,7 @@ const Header = (props) => {
 
   const handleAuth = () => {
     if (!userName) {
-      auth
-        .signInWithPopup(provider)
+      auth.signInWithPopup(provider)
         .then((result) => {
           setUser(result.user);
         })
@@ -63,9 +62,9 @@ const Header = (props) => {
       </Logo>
 
       {!userName ? (
-        <Login onClick={handleAuth}>Login</Login>
-      ) : (
-        <>
+        <Login onClick={handleAuth}>Login</Login>//agar login nhi hai toh kuch display nhi krvana hai!
+      ) : (// ab yeh saara navbar hi dikhana hai
+        <> 
           <NavMenu>
             <a href="/home">
               <img src="/images/home-icon.svg" alt="HOME" />
